@@ -90,7 +90,7 @@ make_deb() {
 
     # copy the main binary
     install -Dm755 "target/$TARGET/release/$PROJECT_NAME" "$tempdir/usr/bin/$PROJECT_NAME"
-    strip "$tempdir/usr/bin/$PROJECT_NAME"
+    "${gcc_prefix}"strip "$tempdir/usr/bin/$PROJECT_NAME"
 
     # manpage
     install -Dm644 "doc/$PROJECT_NAME.1" "$tempdir/usr/share/man/man1/$PROJECT_NAME.1"
